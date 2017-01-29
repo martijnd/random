@@ -1,0 +1,101 @@
+$bg-color: #f2f2f2;
+$ball-color: #55dbb1;
+$animation-time: 1.3s;
+
+
+body {
+	background-color: $bg-color;
+	text-align: center;
+}
+
+.parent {
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translateX(-50%) translateY(-50%);
+	display: inline-block;
+	// background-color:white;
+	margin: auto;
+}
+
+.ball {
+	background-color: $ball-color;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-left: -5px;
+
+}
+.left-ball {
+	display: inline-block;
+  animation: xAxisleft $animation-time infinite linear;
+}
+
+.right-ball {
+	display: inline-block;
+	animation: xAxisright $animation-time infinite linear;
+	margin-left: -5px;
+}
+
+.left-ball:after {
+	content: '';
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $ball-color;
+  animation: yAxisleft $animation-time infinite linear;
+}
+
+.right-ball:after {
+	content: '';
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $ball-color;
+  animation: yAxisright $animation-time infinite cubic-bezier(0.46, 0.15, 0.93, 0.65);
+}
+
+@keyframes xAxisleft {
+  25% {
+    animation-timing-function: cubic-bezier(0.21, 0.02, 0.88, 0.55);
+    transform: translateX(-250%); } 
+  50% {
+  	transform: translateX(0); }
+}
+
+@keyframes yAxisleft {
+  0% {
+    animation-timing-function: cubic-bezier(0.51, 0.18, 0.88, 0.45); }
+  25% {
+    animation-timing-function: cubic-bezier(0.21, 0.4, 0.49, 0.79);
+    transform: translateY(-50%); } 
+  50% {
+    transform: translateY(0); 
+  }
+}
+
+@keyframes xAxisright {
+  0% {
+  	transform: translateX(0);
+  }
+  50% {
+  	transform: translateX(0); }
+  	75% {
+    animation-timing-function: cubic-bezier(0.21, 0.02, 0.88, 0.55);
+    transform: translateX(250%); } 
+}
+
+@keyframes yAxisright {
+  0% {
+    transform: translateY(0);
+	}
+  50% {
+    transform: translateY(0); 
+  }
+  75% {
+    animation-timing-function: cubic-bezier(0.21, 0.4, 0.49, 0.79);
+    transform: translateY(-50%); } 
+}
