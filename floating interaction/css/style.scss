@@ -1,0 +1,144 @@
+$animation-time: 0.3s;
+
+body {
+  background-color: #fff;
+  text-align: center; 
+}
+
+.parent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: inline-block;
+  margin: auto; 
+  }
+
+.circle-front {
+  z-index: 2;
+  position: absolute;
+  top: -9px;
+  display: inline-block;
+  background-color: #e74c3b;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 0 2px 11px rgba(255, 241, 209, 0.19), 0 4px 6px rgba(0, 0, 0, 0.23);
+  transform: translateX(-50%);
+}
+
+.dot {
+  position: absolute;
+  margin:0 auto;
+  background-color:white;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  transition: all $animation-time ease-out;
+}
+
+.dot-left {
+  top: 40px;
+  left: 23px;
+}
+
+.dot-middle {
+  top: 40px;
+  left: 35px;
+}
+
+.dot-right {
+  top: 40px;
+  left: 48px;
+}
+
+.dot-left-line {
+  top: 40px;
+  left:23px;
+  height: 6px;
+  width: 32px;
+  transform: rotate(45deg);
+  border-radius:4px;
+}
+
+.dot-right-line {
+  top: 40px;
+  left:23px;
+  height: 6px;
+  width: 32px;
+  transform: rotate(-45deg);
+  border-radius:4px;
+}
+
+.circle-back {
+  position:absolute;
+  display: inline-block;
+  background-color: #e74c3b;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16), 0 1px 4px rgba(0, 0, 0, 0.23);
+  height: 60px;
+  width: 1px;
+  border-radius:30px;
+  transform: translateX(-50%);
+  transition: all $animation-time ease-out;
+}
+
+
+.extend {
+  width: 400px !important;
+}
+
+.move-left {
+  transform: translateX(-175px);
+}
+
+.move-right {
+  transform: translateX(123px);
+}
+
+#heart {
+  height: 0px;
+  position: absolute;
+  top: 19px;
+  right: 132px;
+  transition: all $animation-time ease-out;
+}
+
+#comment {
+  height: 0px;
+  position: absolute;
+  top:13px;
+  right:61px;
+  transition: all $animation-time ease-out;
+}
+
+#downarrow {
+  height: 0px;
+  position: absolute;
+  top:12px;
+  left:64px;
+  transition: all $animation-time ease-out;
+}
+
+#share {
+  height: 0px;
+  position: absolute;
+  top: 16px;
+  left: 130px;
+  transition: all $animation-time ease-out;
+}
+
+.showheart {
+  height: 24px !important;
+}
+
+.showcomment {
+  height: 35px !important;
+}
+
+.showdownarrow {
+  height: 35px !important;
+}
+
+.showshare {
+  height: 32px !important;
+}
